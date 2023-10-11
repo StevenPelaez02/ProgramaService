@@ -16,7 +16,7 @@ public class Programa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-    private String pais;
+    private String programa;
 
     //TODO pensar si se le van a poner mas atributos al modelo PROGRAMA
 }
