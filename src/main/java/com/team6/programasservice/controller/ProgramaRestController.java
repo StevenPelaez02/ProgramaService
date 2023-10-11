@@ -20,7 +20,7 @@ public class ProgramaRestController {
         return programaService.save(programa);
     }
 
-    @GetMapping("/programa")
+    @GetMapping("/programas")
     public List<Programa> listar(){return (List<Programa>) programaService.findAll();}
 
     //TODO crear ENDPOINTS e implementar metodos de listar, actualizar y eliminar
