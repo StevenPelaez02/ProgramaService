@@ -24,5 +24,10 @@ public class ProgramaRestController {
     public List<Programa> listar(){return (List<Programa>) programaService.findAll();}
 
     //TODO crear ENDPOINTS e implementar metodos de listar, actualizar y eliminar
+
+    @PatchMapping("/programa")
+    public Programa modificarPrograma(@RequestBody Programa programa){
+        return programaService.save(programa);
+    }
 }
 
