@@ -20,7 +20,6 @@ public class ProgramaServiceImpl implements IProgramaService{
         List<Programa> programas = (List<Programa>)programaDao.findAll();
         return programas;
     }
-
     @Override
     public Programa findById(Long codigo){return (Programa) programaDao.findById(codigo).get();}
 
@@ -29,6 +28,8 @@ public class ProgramaServiceImpl implements IProgramaService{
         return programaDao.save(programa);
     }
 
-
     //TODO sobreescribir metodos de la interface de listar, buscar y eliminar
+
+    @Override
+    public Programa modificarPrograma(Programa programa){return programaDao.save(programa);}
 }

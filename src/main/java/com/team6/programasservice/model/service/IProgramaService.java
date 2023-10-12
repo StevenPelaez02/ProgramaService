@@ -12,6 +12,8 @@ public interface IProgramaService {
 
     Programa findById(Long id);
 
+    Programa modificarPrograma(Programa programa);
+
     //TODO agregar metodos para borrar listar y buscar
 
 }
