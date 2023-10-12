@@ -28,6 +28,15 @@ public class ProgramaRestController {
     @PatchMapping("/programa")
     public Programa modificarPrograma(@RequestBody Programa programa){
         return programaService.save(programa);
+
     }
+
+    @PostMapping("programa/{id}")
+    public void borrarPrograma(@PathVariable("id") Long id){
+        Programa programa;
+        programa = programaService.findById(id);
+        programaService.delete(programa);
+    }
+
 }
 

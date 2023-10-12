@@ -14,6 +14,8 @@ public interface IProgramaService {
 
     Programa modificarPrograma(Programa programa);
 
+    void delete (Programa programa);
+
     //TODO agregar metodos para borrar listar y buscar
 
 }
