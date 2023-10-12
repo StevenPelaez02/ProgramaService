@@ -23,20 +23,17 @@ public class ProgramaRestController {
     @GetMapping("/programas")
     public List<Programa> listar(){return (List<Programa>) programaService.findAll();}
 
-    //TODO crear ENDPOINTS e implementar metodos de listar, actualizar y eliminar
-
     @PatchMapping("/programa")
     public Programa modificarPrograma(@RequestBody Programa programa){
         return programaService.save(programa);
-
     }
 
-    @PostMapping("programa/{id}")
-    public void borrarPrograma(@PathVariable("id") Long id){
+    @DeleteMapping("programa/{id}")
+    public String borrarPrograma(@PathVariable("id") Long id){
         Programa programa;
         programa = programaService.findById(id);
         programaService.delete(programa);
+        return "Se elimino el programa "+ programa.getPrograma() + " con ID "  + programa.getId() + " correctamente";
     }
-
 }
 

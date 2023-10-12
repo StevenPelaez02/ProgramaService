@@ -28,10 +28,6 @@ public class ProgramaServiceImpl implements IProgramaService{
         return programaDao.save(programa);
     }
 
-
-
-    //TODO sobreescribir metodos de la interface de listar, buscar y eliminar
-
     @Override
     public Programa modificarPrograma(Programa programa){return programaDao.save(programa);}
 
