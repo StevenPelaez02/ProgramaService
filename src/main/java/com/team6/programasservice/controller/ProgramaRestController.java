@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.swing.*;
 import java.util.List;
 
+@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/programa-service")
 public class ProgramaRestController {
