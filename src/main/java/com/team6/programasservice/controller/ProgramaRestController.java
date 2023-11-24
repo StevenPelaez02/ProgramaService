@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.swing.*;
 import java.util.List;
 
+@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("/api/programa-service")
 public class ProgramaRestController {
@@ -20,20 +21,19 @@ public class ProgramaRestController {
         return programaService.save(programa);
     }
 
-    @GetMapping("/programas")
+    @GetMapping("/programa")
     public List<Programa> listar(){return (List<Programa>) programaService.findAll();}
 
-    @PatchMapping("/programa")
+    @PutMapping("/programa")
     public Programa modificarPrograma(@RequestBody Programa programa){
         return programaService.save(programa);
     }
 
     @DeleteMapping("programa/{id}")
-    public String borrarPrograma(@PathVariable("id") Long id){
+    public void borrarPrograma(@PathVariable("id") Long id){
         Programa programa;
         programa = programaService.findById(id);
         programaService.delete(programa);
-        return "Se elimino el programa "+ programa.getPrograma() + " con ID "  + programa.getId() + " correctamente";
     }
 }
 
